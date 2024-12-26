@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
+
+
 import { Bus, Calendar, Clock, MapPin, Phone, Mail, MapPinIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -265,6 +269,10 @@ export default function TransportBooking() {
                   <Phone className="h-4 w-4 text-red-500" />
                   <span>Commercial: </span>
                   <a href="tel:78-191-82-82" className="hover:text-red-500">78-191-82-82</a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 text-red-500" />
+                  <a href="tel:78-427-10-52" className="hover:text-red-500">barhamiennetransport@gmail.com</a>
                 </p>
               </div>
             </div>
