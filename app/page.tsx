@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
-
-
 import { Bus, Calendar, Clock, MapPin, Phone, Mail, MapPinIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,194 +10,167 @@ export default function TransportBooking() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation Menu */}
-      <nav className="bg-zinc-900 py-4 sticky top-0 z-50">
+      <nav className="bg-black py-4 sticky top-0 z-50 border-b ">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">Barhamienne Transport</Link>
-          <ul className="flex space-x-4">
-            <li><Link href="/" className="hover:text-red-500">Accueil</Link></li>
-            <li><Link href="/reservations" className="hover:text-red-500">Réservations</Link></li>
-            <li><Link href="/horaires" className="hover:text-red-500">Horaires</Link></li>
-            <li><Link href="/faq" className="hover:text-red-500">FAQ</Link></li>
-            <li><Link href="/contact" className="hover:text-red-500">Contact</Link></li>
+          <Link href="/" className="w-48 h-12 relative">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-26%20at%2015.20.55(3)-PwcOXCeCQqdMZLbJ6OME9C9lGAo3qD.jpeg"
+              alt="Barhamienne Transport Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </Link>
+          <ul className="flex space-x-6">
+            <li><Link href="/" className="hover:text-red-500 transition-colors">Accueil</Link></li>
+            <li><Link href="/reservations" className="hover:text-red-500 transition-colors">Réservations</Link></li>
+            <li><Link href="/horaires" className="hover:text-red-500 transition-colors">Horaires</Link></li>
+            <li><Link href="/faq" className="hover:text-red-500 transition-colors">FAQ</Link></li>
+            <li><Link href="/contact" className="hover:text-red-500 transition-colors">Contact</Link></li>
           </ul>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full overflow-hidden">
+      <section className="relative h-[70vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30" />
-        <div className="relative z-10 flex h-full w-full items-center justify-center">
-          <Image 
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-26%20at%2015.42.00-AvQON2h9Bu1kf52xYUT08KM9gkBQwK.jpeg"
-            alt="Barhamienne Transport Logo"
-            fill
-            style={{ objectFit: 'cover' }}
-            className="object-center"
-            priority
-          />
-        </div>
+        <Image 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-26%20at%2015.42.00-AvQON2h9Bu1kf52xYUT08KM9gkBQwK.jpeg"
+          alt="Barhamienne Transport Bus"
+          fill
+          style={{ objectFit: 'cover' }}
+          className="object-center"
+          priority
+        />
       </section>
 
-      {/* About Us Section */}
-      <section className="py-16 bg-zinc-900">
+      {/* Booking Cards Section */}
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Qui Sommes Nous</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <p className="text-gray-300 leading-relaxed">
-                Bienvenue sur le site de Barhamienne Transport, votre partenaire de confiance pour tous vos besoins en matière de transport. Nous sommes spécialisés dans la prestation de services de transport adaptés à vos exigences, spécialement pour simplifier les déplacements des étudiants.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Notre équipe dévouée met un point d'honneur à garantir un service rapide, confortable et sécurisé, afin de satisfaire toutes vos attentes. Chez Barhamienne Transport, nous comprenons l'importance de la ponctualité et de la qualité du service.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                C'est pourquoi nous utilisons des véhicules modernes et bien entretenus, équipés. Notre personnel professionnel et expérimenté est à votre disposition pour vous accompagner à chaque étape de votre trajet.
-              </p>
-            </div>
-            <div className="bg-zinc-800 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Nos différentes Caravanes</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <Bus className="text-red-500" />
-                  <span>UGB-THIES-DAKAR</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Bus className="text-red-500" />
-                  <span>DAKAR-THIES-UGB</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Bus className="text-red-500" />
-                  <span>UGB-DAKAR-MBOUR</span>
-                </li>
-              </ul>
-            </div>
+          <h2 className="text-3xl font-bold mb-12 text-center">Nos Destinations</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-zinc-900  hover:border-white transition-colors group">
+              <CardHeader className="relative h-48">
+                <Image
+                  src="/placeholder.svg?height=200&width=400"
+                  alt="UGB-THIES-DAKAR"
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                <CardTitle className="absolute bottom-4 left-4 text-white">UGB-THIES-DAKAR</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <p className="text-gray-400 mb-4">Départs quotidiens avec arrêts stratégiques</p>
+                <Button className="w-full bg-red-500 hover:bg-red-600">Réserver</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-900  hover:border-white transition-colors group">
+              <CardHeader className="relative h-48">
+                <Image
+                  src="/placeholder.svg?height=200&width=400"
+                  alt="DAKAR-THIES-UGB"
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                <CardTitle className="absolute bottom-4 left-4 text-white">DAKAR-THIES-UGB</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <p className="text-gray-400 mb-4">Service matin et après-midi disponible</p>
+                <Button className="w-full bg-red-500 hover:bg-red-600">Réserver</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-900  hover:border-white transition-colors group">
+              <CardHeader className="relative h-48">
+                <Image
+                  src="/placeholder.svg?height=200&width=400"
+                  alt="UGB-DAKAR-MBOUR"
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                <CardTitle className="absolute bottom-4 left-4 text-white">UGB-DAKAR-MBOUR</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <p className="text-gray-400 mb-4">Weekend spécial et service régulier</p>
+                <Button className="w-full bg-red-500 hover:bg-red-600">Réserver</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Booking Section */}
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <Card className="bg-zinc-900 border-zinc-800">
-          <CardHeader>
-            <CardTitle className="text-2xl text-red-500 text-center">Réserver votre trajet</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Tabs defaultValue="matin" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 bg-zinc-800">
-                <TabsTrigger value="matin">Matin</TabsTrigger>
-                <TabsTrigger value="apres-midi">Après-midi</TabsTrigger>
-              </TabsList>
-              <TabsContent value="matin">
-                <div className="space-y-4 mt-4">
-                  <div className="flex items-center gap-4 text-white">
-                    <Bus className="h-5 w-5" />
-                    <span className="text-lg font-medium">DAKAR-THIES-UGB (Matin)</span>
-                  </div>
-                  <div className="space-y-2 text-white">
-                    {[
-                      { name: "Dakar - Patte d'oie", time: "05h-40" },
-                      { name: "Bountou Pikine - Station", time: "05h45" },
-                      { name: "Fass mbao - Arrêt ICS", time: "06h-10" },
-                      { name: "Keur Mbaye fall", time: "06h-20" },
-                      { name: "Bargny-Edk", time: "06-55" },
-                      { name: "Diamniadio - Station olibya", time: "07h05" },
-                      { name: "Sébikhotane - niari poto", time: "07h-20" },
-                      { name: "Km50 - Station clean oil", time: "07h35" },
-                      { name: "Pout- Ciel oil", time: "07h-45" },
-                      { name: "Mairie - Thies", time: "08h00" },
-                      { name: "Tivaoune - Edk", time: "08h45" },
-                      { name: "Tivaoune - Prefecture", time: "08h55" },
-                      { name: "Pire - Garage", time: "09h10" },
-                      { name: "Ngay - Station Star", time: "09h25" },
-                      { name: "Ndande", time: "09h40" },
-                      { name: "Kebemer", time: "09h55" },
-                      { name: "Louga", time: "10h30" }
-                    ].map((stop, index) => (
-                      <div key={index} className="flex items-center justify-between border-b border-zinc-800 py-2">
-                        <div className="flex items-center gap-3">
-                          <MapPin className="h-4 w-4 text-red-500" />
-                          <span>{stop.name}</span>
-                        </div>
-                        <span className="text-white">{stop.time}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button className="w-full mt-6 bg-red-500 hover:bg-red-600">
-                    Réservez
-                  </Button>
-                </div>
-              </TabsContent>
-              <TabsContent value="apres-midi">
-                <div className="space-y-4 mt-4">
-                  <div className="flex items-center gap-4 text-white">
-                    <Bus className="h-5 w-5" />
-                    <span className="text-lg font-medium">DAKAR-THIES-UGB (Après-midi)</span>
-                  </div>
-                  <div className="space-y-2 text-white">
-                    {[
-                      { name: "Dakar - Ecole Normale", time: "12h30" },
-                      { name: "Bountou Pikine - Station", time: "12h50" },
-                      { name: "Fass mbao - Arrêt ICS", time: "13h10" },
-                      { name: "Keur Mbaye fall", time: "13h25" },
-                      { name: "Bargny-Edk", time: "13h55" },
-                      { name: "Diamniadio - Station olibya", time: "14h10" },
-                      { name: "Sébikhotane - niari poto", time: "14h25" },
-                      { name: "Km50 - Station clean oil", time: "14h35" },
-                      { name: "Pout- Ciel oil", time: "14h45" },
-                      { name: "Mairie - Thies", time: "15h00" },
-                      { name: "Tivaoune - Edk", time: "15h45" },
-                      { name: "Tivaoune - Prefecture", time: "15h55" },
-                      { name: "Pire - Garage", time: "16h10" },
-                      { name: "Ngay - Station Star", time: "16h25" },
-                      { name: "Ndande", time: "16h40" },
-                      { name: "Kebemer", time: "16h55" },
-                      { name: "Louga", time: "17h30" }
-                    ].map((stop, index) => (
-                      <div key={index} className="flex items-center justify-between border-b border-zinc-800 py-2">
-                        <div className="flex items-center gap-3">
-                          <MapPin className="h-4 w-4 text-red-500" />
-                          <span>{stop.name}</span>
-                        </div>
-                        <span className="text-white">{stop.time}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button className="w-full mt-6 bg-red-500 hover:bg-red-600">
-                    Réservez
-                  </Button>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </CardContent>
-        </Card>
+      {/* Features Section */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Nos Services</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-zinc-900  hover:border-white transition-colors">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Clock className="h-6 w-6 text-red-500" />
+                  Sécurité
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-400">Voyagez en toute tranquillité avec nos services de transport sécurisés</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-zinc-900  hover:border-white transition-colors">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calendar className="h-6 w-6 text-red-500" />
+                  Confort
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-400">Profitez d'un voyage confortable dans nos bus modernes et bien entretenus</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-zinc-900  hover:border-white transition-colors">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-6 w-6 text-red-500" />
+                  Proximité
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-400">Des arrêts stratégiquement situés pour votre commodité</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-16 bg-zinc-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Vos questions fréquentes</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Questions Fréquentes</h2>
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Comment effectuer une réservation?</AccordionTrigger>
+              <AccordionItem value="item-1" className="">
+                <AccordionTrigger className="hover:text-red-500">Comment effectuer une réservation?</AccordionTrigger>
                 <AccordionContent>
                   Pour effectuer une réservation, vous pouvez utiliser notre formulaire en ligne ou nous contacter directement par téléphone. Sélectionnez votre itinéraire, la date et l'heure de départ, et suivez les instructions pour finaliser votre réservation.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Comment savoir si ma réservation est effective?</AccordionTrigger>
+              <AccordionItem value="item-2" className="">
+                <AccordionTrigger className="hover:text-red-500">Comment savoir si ma réservation est effective?</AccordionTrigger>
                 <AccordionContent>
                   Après votre réservation, vous recevrez une confirmation par SMS. Vous pouvez également vérifier le statut de votre réservation en nous contactant directement.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Où se situe votre siège principal?</AccordionTrigger>
+              <AccordionItem value="item-3" className="">
+                <AccordionTrigger className="hover:text-red-500">Où se situe votre siège principal?</AccordionTrigger>
                 <AccordionContent>
                   Notre siège principal est situé au Campus 1 entre Village B et Village C.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>Comment se déroulent les caravanes de Mbour et du week-end?</AccordionTrigger>
+              <AccordionItem value="item-4" className="">
+                <AccordionTrigger className="hover:text-red-500">Comment se déroulent les caravanes de Mbour et du week-end?</AccordionTrigger>
                 <AccordionContent>
                   Les caravanes de Mbour et du week-end suivent un horaire spécial. Nous proposons des départs réguliers avec des arrêts aux points principaux. Contactez-nous pour plus de détails sur les horaires spécifiques.
                 </AccordionContent>
@@ -211,47 +180,8 @@ export default function TransportBooking() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-zinc-900 py-12">
-        <div className="mx-auto max-w-6xl px-4 grid gap-6 md:grid-cols-3">
-          <Card className="bg-black border-zinc-800">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Clock className="h-5 w-5 text-red-500" />
-                Sécurité
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-white">
-              Voyagez en toute tranquillité avec nos services de transport sécurisés
-            </CardContent>
-          </Card>
-          <Card className="bg-black border-zinc-800">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Calendar className="h-5 w-5 text-red-500" />
-                Confort
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-white">
-              Profitez d'un voyage confortable dans nos bus modernes et bien entretenus
-            </CardContent>
-          </Card>
-          <Card className="bg-black border-zinc-800">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <MapPin className="h-5 w-5 text-red-500" />
-                Proximité
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-white">
-              Des arrêts stratégiquement situés pour votre commodité
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-zinc-900 border-t border-zinc-800">
+      <footer className="bg-black border-t ">
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -259,20 +189,16 @@ export default function TransportBooking() {
               <div className="space-y-2">
                 <p className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-red-500" />
-                  <a href="tel:78-427-10-52" className="hover:text-red-500">78-427-10-52</a>
+                  <a href="tel:78-427-10-52" className="hover:text-red-500 transition-colors">78-427-10-52</a>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-red-500" />
-                  <a href="tel:77-358-68-75" className="hover:text-red-500">77-358-68-75</a>
+                  <a href="tel:77-358-68-75" className="hover:text-red-500 transition-colors">77-358-68-75</a>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-red-500" />
                   <span>Commercial: </span>
-                  <a href="tel:78-191-82-82" className="hover:text-red-500">78-191-82-82</a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-red-500" />
-                  <a href="tel:78-427-10-52" className="hover:text-red-500">barhamiennetransport@gmail.com</a>
+                  <a href="tel:78-191-82-82" className="hover:text-red-500 transition-colors">78-191-82-82</a>
                 </p>
               </div>
             </div>
@@ -286,14 +212,14 @@ export default function TransportBooking() {
             <div>
               <h3 className="text-xl font-bold mb-4">Liens Rapides</h3>
               <ul className="space-y-2">
-                <li><Link href="/reservations" className="hover:text-red-500">Réservations</Link></li>
-                <li><Link href="/horaires" className="hover:text-red-500">Horaires</Link></li>
-                <li><Link href="/faq" className="hover:text-red-500">FAQ</Link></li>
-                <li><Link href="/contact" className="hover:text-red-500">Contact</Link></li>
+                <li><Link href="/reservations" className="hover:text-red-500 transition-colors">Réservations</Link></li>
+                <li><Link href="/horaires" className="hover:text-red-500 transition-colors">Horaires</Link></li>
+                <li><Link href="/faq" className="hover:text-red-500 transition-colors">FAQ</Link></li>
+                <li><Link href="/contact" className="hover:text-red-500 transition-colors">Contact</Link></li>
               </ul>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-zinc-800 text-center">
+          <div className="mt-8 pt-8 border-t  text-center">
             <p>&copy; {new Date().getFullYear()} Barhamienne Transport. Tous droits réservés.</p>
           </div>
         </div>
