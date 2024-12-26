@@ -79,7 +79,7 @@ export default function TransportBooking() {
       <section className="mx-auto max-w-6xl px-4 py-12">
         <Card className="bg-zinc-900 border-zinc-800">
           <CardHeader>
-            <CardTitle className="text-2xl text-red-500 text-center">Réserver votre trajet</CardTitle>
+            <CardTitle className="text-2xl">Réserver votre trajet</CardTitle>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="matin" className="w-full">
@@ -93,7 +93,7 @@ export default function TransportBooking() {
                     <Bus className="h-5 w-5" />
                     <span className="text-lg font-medium">DAKAR-THIES-UGB (Matin)</span>
                   </div>
-                  <div className="space-y-2 text-white">
+                  <div className="space-y-2">
                     {[
                       { name: "Dakar - Patte d'oie", time: "05h-40" },
                       { name: "Bountou Pikine - Station", time: "05h45" },
@@ -133,7 +133,7 @@ export default function TransportBooking() {
                     <Bus className="h-5 w-5" />
                     <span className="text-lg font-medium">DAKAR-THIES-UGB (Après-midi)</span>
                   </div>
-                  <div className="space-y-2 text-white">
+                  <div className="space-y-2">
                     {[
                       { name: "Dakar - Ecole Normale", time: "12h30" },
                       { name: "Bountou Pikine - Station", time: "12h50" },
@@ -212,34 +212,34 @@ export default function TransportBooking() {
         <div className="mx-auto max-w-6xl px-4 grid gap-6 md:grid-cols-3">
           <Card className="bg-black border-zinc-800">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
+              <CardTitle className="flex items-center gap-2">
                 <Clock className="h-5 w-5 text-red-500" />
                 Sécurité
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-white">
+            <CardContent>
               Voyagez en toute tranquillité avec nos services de transport sécurisés
             </CardContent>
           </Card>
           <Card className="bg-black border-zinc-800">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
+              <CardTitle className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-red-500" />
                 Confort
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-white">
+            <CardContent>
               Profitez d'un voyage confortable dans nos bus modernes et bien entretenus
             </CardContent>
           </Card>
           <Card className="bg-black border-zinc-800">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
+              <CardTitle className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-red-500" />
                 Proximité
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-white">
+            <CardContent>
               Des arrêts stratégiquement situés pour votre commodité
             </CardContent>
           </Card>
