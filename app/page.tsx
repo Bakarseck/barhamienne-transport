@@ -23,10 +23,8 @@ export default function TransportBooking() {
           </Link>
           <ul className="flex space-x-6">
             <li><Link href="/" className="hover:text-red-500 transition-colors">Accueil</Link></li>
-            <li><Link href="/reservations" className="hover:text-red-500 transition-colors">Réservations</Link></li>
-            <li><Link href="/horaires" className="hover:text-red-500 transition-colors">Horaires</Link></li>
+            <li><Link href="/contact" className="hover:text-red-500 transition-colors">Yobanté</Link></li>
             <li><Link href="/faq" className="hover:text-red-500 transition-colors">FAQ</Link></li>
-            <li><Link href="/contact" className="hover:text-red-500 transition-colors">Contact</Link></li>
           </ul>
         </div>
       </nav>
